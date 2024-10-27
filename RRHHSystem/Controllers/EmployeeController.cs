@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using RRHHSystem.Models; // Modelos
-using RRHHSystem.Repositories; // Repositorio
+using RRHHSystem.Models;
+using RRHHSystem.Repositories; 
 
 namespace RRHHSystem.Controllers
 {

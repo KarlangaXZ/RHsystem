@@ -1,8 +1,8 @@
-using RRHHSystem.Data; // Referencia a la base de datos
-using RRHHSystem.Models; // Referencia a los modelos
+using RRHHSystem.Data; 
+using RRHHSystem.Models; 
 using Microsoft.EntityFrameworkCore;
 
-namespace RRHHSystem.Repositories // Cambiar este nombre según tu estructura
+namespace RRHHSystem.Repositories 
 {
     public class EmployeeRepository : IRepository<Employee>
     {
