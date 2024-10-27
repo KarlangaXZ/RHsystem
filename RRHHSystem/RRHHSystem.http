@@ -1,0 +1,6 @@
+@RRHHSystem_HostAddress = http://localhost:5114
+
+GET {{RRHHSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

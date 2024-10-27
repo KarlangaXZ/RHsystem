@@ -1,0 +1,36 @@
+@model List<RRHHSystem.Models.User>
+
+@{
+    ViewData["Title"] = "Manage Users";
+}
+
+<h2>Administrar Usuarios</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre de Usuario</th>
+            <th>Rol Actual</th>
+            <th>Actualizar Rol</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Username</td>
+                <td>@user.Role</td>
+                <td>
+                    <form asp-action="UpdateUserRole" method="post">
+                        <input type="hidden" name="userId" value="@user.Id" />
+                        <select name="role" class="form-control">
+                            <option value="User" @(user.Role == "User" ? "selected" : "")>User</option>
+                            <option value="Admin" @(user.Role == "Admin" ? "selected" : "")>Admin</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary mt-2">Actualizar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

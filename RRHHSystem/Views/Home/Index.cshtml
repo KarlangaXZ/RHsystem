@@ -1,0 +1,100 @@
+@{
+    ViewData["Title"] = "Login/Register";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+   <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["Success"]
+                </div>
+            }
+
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["Error"]
+                </div>
+            }
+
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3 id="form-title">Iniciar Sesión</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Login" method="post" id="login-form">
+                        <div class="form-group">
+                            <label for="username">Usuario</label>
+                            <input type="text" class="form-control" id="username" name="Username" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="Password" required />
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                        <div class="text-center mt-3">
+                            <button type="button" class="btn btn-link" id="show-register">¿No tienes una cuenta? Regístrate</button>
+                        </div>
+                    </form>
+
+                    <form asp-action="Register" method="post" id="register-form" style="display:none;">
+                        <div class="form-group">
+                            <label for="reg-username">Usuario</label>
+                            <input type="text" class="form-control" id="reg-username" name="Username" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password">Contraseña</label>
+                            <input type="password" class="form-control" id="reg-password" name="Password" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="first-name">Nombre</label>
+                            <input type="text" class="form-control" id="first-name" name="FirstName" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Apellido</label>
+                            <input type="text" class="form-control" id="last-name" name="LastName" required />
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Registrar</button>
+                        <div class="text-center mt-3">
+                            <button type="button" class="btn btn-link" id="show-login">¿Ya tienes una cuenta? Inicia sesión</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#show-register").click(function () {
+                $("#login-form").hide();
+                $("#register-form").show();
+                $("#form-title").text("Registrarse");
+            });
+
+            $("#show-login").click(function () {
+                $("#register-form").hide();
+                $("#login-form").show();
+                $("#form-title").text("Iniciar Sesión");
+            });
+        });
+    </script>
+</body>
+</html>
