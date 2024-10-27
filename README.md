@@ -1,4 +1,7 @@
+
 # RRHHSystems - Backend
+
+<img  src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGRyeWd1dTUzMWQ3dXJ0cnYzOGc0dTZsMWVreThjd3Uwamt2YTRkeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Lny6Rw04nsOOc/giphy.gif">
 
 Este es el backend de **RRHHSystems**, un sistema de recursos humanos para gestionar empleados, cargos, salarios, ponches, cuentas y nóminas. Este backend está desarrollado en **.NET Core 8** y utiliza **Entity Framework Core** como ORM, conectándose a una base de datos **SQL Server Express**.
 
@@ -64,5 +67,4 @@ RRHHSystems/
 ├── Repositories/       # Implementaciones del patrón repositorio
 └── appsettings.json    # Configuración de la aplicación
 ```
-
 
